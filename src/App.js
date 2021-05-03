@@ -2,6 +2,33 @@ import React from 'react';
 import "./styles/styles.scss";
 import Curso from "./Curso";
 
+const cursos = [
+    {
+        "titulo": "React.js desde cero",
+        "image": "http://sigdeletras.com/images/blog/202004_react_leaflet/react.png",
+        "price": 40,
+        "profesor": "Javier Martínez"
+    }, 
+    {
+        "titulo": "Drupal desde cero",
+        "image": "https://www.agiliacenter.com/wp-content/uploads/2017/02/drupal-cms.png",
+        "price": 30,
+        "profesor": "Max Saldaña"
+    }, 
+    {
+        "titulo": "GO desde cero",
+        "image": "https://www.filepicker.io/api/file/ydMvSihoRCawbrrvVbct",
+        "price": 50,
+        "profesor": "Alexys Lozada"
+    }, 
+    {
+        "titulo": "HTML desde cero",
+        "image": "https://blog.hostdime.com.co/wp-content/uploads/html-5-1200x720.jpg",
+        "price": 10,
+        "profesor": "Álvaro Felipe"
+    }
+]
+
 const App = () => (
     <>
         <div className="main-banner img-container l-section" id="main-banner">
@@ -17,16 +44,9 @@ const App = () => (
         </div>
     </div>
     <div className="ed-grid m-grid-3">
-        <Curso />
-        <Curso />
-        <Curso />
-        <Curso />
-        <Curso />
-        <Curso />
-        <Curso />
-        <Curso />
-        <Curso />
-        <Curso />
+        {
+            cursos.map( curso => <Curso title={curso.titulo} image={curso.image} price={curso.price} profesor={curso.profesor} /> )
+        }
     </div>
     </>
 );
